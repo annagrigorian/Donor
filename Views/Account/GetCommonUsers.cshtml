@@ -1,0 +1,35 @@
+﻿@using DonorTestWithIndividual.Data;
+@model CreateUserModel
+@{
+    ViewData["Title"] = "GetCommonUsers";
+}
+
+<h2>Common Users List</h2>
+@{
+    List<RegisteredPerson> donors = (List<RegisteredPerson>)ViewBag.CommonUsers;
+}
+@if (donors.Count == 0)
+{
+    <p>No donors found</p>
+}
+else
+{
+    <table border="1" class="table table-striped table-bordered">
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>BloodGroup</th>
+        </tr>
+
+        @foreach (var user in ViewBag.CommonUsers)
+        {
+            <tr>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.Email</td>
+                <td>@user.BloodGroup</td>
+            </tr>
+        }
+    </table>
+}

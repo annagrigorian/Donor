@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h5 class="text-center display-4">Dear Administrator, in this environment you can create new Hospital users.</h5>
+<br />
+
+<div style="width:100%">
+    <div class="images">
+        <img src="~/css/buildhospital.gif" width="200" height="200" />
+        <a class="btn btn-danger" asp-action="CreateUserView" asp-controller="Account"> Create </a>
+    </div>
+    <div class="images">
+        <img src="~/css/hospital.gif" width="200" height="200" />
+        <a class="btn btn-danger" asp-action="GetHospitalUsers" asp-controller="Account">Hospital List</a>
+    </div>
+    <div class="images">
+        <img src="~/css/donor.gif" width="200" height="200" />
+        <a class="btn btn-danger" asp-action="GetCommonUsers" asp-controller="Account">Common users List</a>
+    </div>
+</div>
+

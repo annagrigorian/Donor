@@ -1,0 +1,19 @@
+﻿@using DonorTestWithIndividual.Data;
+@model RegisteredPerson
+@{
+    ViewData["Title"] = "Hospital";
+}
+
+<h2 class="text-danger display-4">Hospital @ViewBag.Hospital.FirstName</h2>
+<br />
+@{
+    List<BloodGroup> bloodGroup = (List<BloodGroup>)ViewBag.BloodGroups;
+}
+<form method="post">
+    @foreach(var item in bloodGroup)
+    {
+        <input name="AreChecked" type="checkbox" value="@item" /> @item.ToString()<br />
+    }
+    <br/>
+    <a class="btn btn-danger" asp-action="SendEmail" asp-controller="Account">Send Email</a>
+</form>
